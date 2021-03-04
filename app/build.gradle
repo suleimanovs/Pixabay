@@ -1,0 +1,107 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'org.jetbrains.kotlin.kapt'
+    id 'kotlinx-serialization'
+//    id 'com.google.dagger.hilt.android'
+}
+
+android {
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "dev.infoland.pixabaytemplate"
+        minSdkVersion 26
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField 'String', 'PIXABAY_API_KEY', '\"40962710-0bf6e2b8795e89362d111fa35\"'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    buildFeatures {
+        dataBinding false
+        viewBinding false
+    }
+    namespace 'dev.androidbroadcast.pixabaytemplate'
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.10.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.fragment:fragment-ktx:1.6.2'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
+//    implementation 'io.reactivex.rxjava2:rxjava:2.2.21'
+//    implementation 'io.reactivex.rxjava3:rxjava:3.0.10'
+//    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3'
+
+//    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.1.0"
+//    implementation 'com.google.code.gson:gson:2.8.6'
+
+//    def lifecycleVersion='2.3.0'
+//    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
+//    implementation "androidx.lifecycle:lifecycle-livedata-core-ktx:$lifecycleVersion"
+//    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
+//    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycleVersion"
+//    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion"
+//    implementation 'androidx.paging:paging-runtime-ktx:3.0.0-beta01'
+//    implementation 'androidx.paging:paging-runtime-ktx:2.1.2'
+
+//    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+//    def workManagerVersion='2.5.0'
+//    implementation "androidx.work:work-runtime-ktx:$workManagerVersion"
+//    implementation "androidx.work:work-rxjava2:$workManagerVersion"
+//    implementation "androidx.work:work-rxjava3:$workManagerVersion"
+
+//    def daggerVersion = '2.33'
+//    implementation "com.google.dagger:dagger:$daggerVersion"
+//    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+
+//    def hiltVersion = "$daggerVersion-beta"
+//    implementation "com.google.dagger:hilt-android:$hiltVersion"
+//    kapt "com.google.dagger:hilt-compiler:$hiltVersion"
+
+//    def koinVersion = '2.2.2'
+//    implementation "org.koin:koin-androidx-scope:$koin_version"
+//    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+//    implementation "org.koin:koin-androidx-fragment:$koin_version"
+//    implementation "org.koin:koin-androidx-workmanager:$koin_version"
+//    implementation "org.koin:koin-androidx-compose:$koin_version"
+//    implementation "org.koin:koin-androidx-ext:$koin_version"
+
+//    def glideVersion = '4.12.0'
+//    implementation "com.github.bumptech.glide:glide:$glideVersion"
+//    kapt "com.github.bumptech.glide:compiler:$glideVersion"
+
+//    implementation "io.coil-kt:coil:1.1.1"
+//    implementation 'com.facebook.fresco:fresco:2.4.0'
+//    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    testImplementation 'junit:junit:4.13.2'
+
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
